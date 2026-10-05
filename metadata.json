@@ -1,0 +1,6 @@
+{
+  "name": "ZipZag - Logic Grid Path Game",
+  "description": "Play ZipZag! Connect numbers in numerical order while filling every cell on the grid with a single continuous path across 500 exciting levels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

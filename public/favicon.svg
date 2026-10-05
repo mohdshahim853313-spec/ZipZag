@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="-229.69 -284.41 2055.56 2055.56" style="overflow: visible;" preserveAspectRatio="xMidYMid meet" overflow="visible">
+  <g style=" filter: brightness(122%) saturate(118%) contrast(91%);">
+  <defs>
+    <linearGradient id="pf_studio_bgGradient" x1="0" y1="0" x2="1536" y2="1536" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff7600"/>
+      <stop offset="45%" stop-color="#ff4809"/>
+      <stop offset="100%" stop-color="#f10b21"/>
+    </linearGradient>
+    <clipPath id="pf_studio_clip">
+      <rect x="0" y="0" width="1536" height="1536" rx="285"/>
+    </clipPath>
+  </defs>
+
+  <!-- BACKGROUND SQUIRCLE -->
+  <rect x="0" y="0" width="1536" height="1536" rx="285" fill="url(#pf_studio_bgGradient)" data-layer-id="layer_0" transform="translate(30.77 -45.281) translate(768 768) scale(1.123 1.123) translate(-768 -768)"/>
+
+  <g clip-path="url(#pf_studio_clip)">
+    <!-- GRID -->
+    <g fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.32">
+      <line x1="231" y1="45" x2="231" y2="1490"/>
+      <line x1="363" y1="45" x2="363" y2="1490"/>
+      <line x1="494" y1="45" x2="494" y2="1490"/>
+      <line x1="624" y1="45" x2="624" y2="1490"/>
+      <line x1="756" y1="45" x2="756" y2="1490"/>
+      <line x1="886" y1="45" x2="886" y2="1490"/>
+      <line x1="1016" y1="45" x2="1016" y2="1490"/>
+
+      <line x1="55" y1="214" x2="1480" y2="214"/>
+      <line x1="55" y1="351" x2="1480" y2="351"/>
+      <line x1="55" y1="489" x2="1480" y2="489"/>
+      <line x1="55" y1="624" x2="1480" y2="624"/>
+      <line x1="55" y1="757" x2="1480" y2="757"/>
+      <line x1="55" y1="894" x2="1480" y2="894"/>
+      <line x1="55" y1="1032" x2="1480" y2="1032"/>
+    </g>
+
+    <!-- CONTINUOUS ZIG-ZAG -->
+    <polyline points="430,390 660,475 520,620 790,635 650,800 870,885" fill="none" stroke="#ffffff" stroke-width="92" stroke-linejoin="miter" stroke-linecap="butt" transform="translate(166.421 100.209) translate(623.5 625) rotate(-3) scale(1.637 1.637) translate(-623.5 -625)" opacity="100" style="opacity: 100 !important; filter: drop-shadow(rgb(107, 107, 107) 0px 0px 9px) drop-shadow(rgb(107, 107, 107) 0px 0px 4px) brightness(125%) !important;"/>
+
+    <!-- TOP CIRCLE -->
+    <circle cx="352" cy="350" r="108" fill="#ffffff" transform="translate(166.421 100.209) translate(623.5 625) rotate(-3) scale(1.637 1.637) translate(-623.5 -625)" opacity="100" style="opacity: 100 !important; filter: drop-shadow(rgb(107, 107, 107) 0px 0px 9px) drop-shadow(rgb(107, 107, 107) 0px 0px 4px) brightness(125%) !important;"/>
+
+    <!-- BOTTOM CIRCLE -->
+    <circle cx="895" cy="900" r="108" fill="#ffffff" transform="translate(166.421 100.209) translate(623.5 625) rotate(-3) scale(1.637 1.637) translate(-623.5 -625)" opacity="100" style="opacity: 100 !important; filter: drop-shadow(rgb(107, 107, 107) 0px 0px 9px) drop-shadow(rgb(107, 107, 107) 0px 0px 4px) brightness(125%) !important;"/>
+  </g>
+  </g>
+</svg>
