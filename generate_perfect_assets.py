@@ -151,29 +151,9 @@ def render_svg_to_png(svg_str, width, height, output_path):
         os.remove(tmp_path)
 
 def create_splash_screen(width, height, master_icon_img, output_path):
-    # Create high-res themed splash screen matching icon's gradient
-    # Linear gradient from top-left #ff7600 via #ff4809 to bottom-right #f10b21
-    splash = Image.new("RGB", (width, height))
+    # Pure white background as requested
+    splash = Image.new("RGB", (width, height), (255, 255, 255))
     draw = ImageDraw.Draw(splash)
-    
-    # Fast vertical gradient interpolation
-    c_start = (255, 118, 0)
-    c_mid = (255, 72, 9)
-    c_end = (241, 11, 33)
-    
-    for y in range(height):
-        factor = y / max(height - 1, 1)
-        if factor < 0.5:
-            f = factor * 2
-            r = int(c_start[0] + (c_mid[0] - c_start[0]) * f)
-            g = int(c_start[1] + (c_mid[1] - c_start[1]) * f)
-            b = int(c_start[2] + (c_mid[2] - c_start[2]) * f)
-        else:
-            f = (factor - 0.5) * 2
-            r = int(c_mid[0] + (c_end[0] - c_mid[0]) * f)
-            g = int(c_mid[1] + (c_end[1] - c_mid[1]) * f)
-            b = int(c_mid[2] + (c_end[2] - c_mid[2]) * f)
-        draw.line([(0, y), (width, y)], fill=(r, g, b))
     
     # Determine icon size proportional to screen
     min_dim = min(width, height)
@@ -181,24 +161,23 @@ def create_splash_screen(width, height, master_icon_img, output_path):
     if icon_size < 120:
         icon_size = 120
     
-    # Resize master icon
+    # Resize master icon (user's rounded-corner squircle icon)
     icon_resized = master_icon_img.resize((icon_size, icon_size), Image.Resampling.LANCZOS)
     
-    # Create soft dark drop shadow behind the icon
+    # Create soft, elegant drop shadow behind the icon on white background
     shadow_pad = int(icon_size * 0.25)
     shadow_img = Image.new("RGBA", (icon_size + shadow_pad * 2, icon_size + shadow_pad * 2), (0, 0, 0, 0))
     s_draw = ImageDraw.Draw(shadow_img)
     corner_rad = int(icon_size * 0.22)
     s_draw.rounded_rectangle(
-        [shadow_pad, shadow_pad + int(icon_size * 0.08), shadow_pad + icon_size, shadow_pad + icon_size + int(icon_size * 0.08)],
+        [shadow_pad, shadow_pad + int(icon_size * 0.06), shadow_pad + icon_size, shadow_pad + icon_size + int(icon_size * 0.06)],
         radius=corner_rad,
-        fill=(0, 0, 0, 95)
+        fill=(0, 0, 0, 45) # Soft shadow on white
     )
     shadow_blurred = shadow_img.filter(ImageFilter.GaussianBlur(radius=int(icon_size * 0.08)))
     
     # Paste shadow then icon
     center_x = width // 2
-    # Vertically slightly above center to leave room for text
     center_y = int(height * 0.44) if height > width else height // 2
     
     shadow_x = center_x - shadow_blurred.width // 2
@@ -209,7 +188,7 @@ def create_splash_screen(width, height, master_icon_img, output_path):
     icon_y = center_y - icon_size // 2
     splash.paste(icon_resized, (icon_x, icon_y), icon_resized)
     
-    # Try to render title text "ZipZag"
+    # Render typography "ZipZag" on white background
     try:
         font_size = max(int(icon_size * 0.28), 24)
         sub_size = max(int(font_size * 0.42), 12)
@@ -226,15 +205,15 @@ def create_splash_screen(width, height, master_icon_img, output_path):
     
     text_y = icon_y + icon_size + int(icon_size * 0.16)
     
-    # Title with subtle text shadow
-    draw.text((center_x - tw // 2 + 1, text_y + 2), text, font=font, fill=(0, 0, 0, 70))
-    draw.text((center_x - tw // 2, text_y), text, font=font, fill=(255, 255, 255, 255))
+    # Title in deep slate #0f172a
+    draw.text((center_x - tw // 2, text_y), text, font=font, fill=(15, 23, 42, 255))
     
     subtext = "GRID LINE PUZZLE"
     s_bbox = draw.textbbox((0, 0), subtext, font=font_sub)
     stw = s_bbox[2] - s_bbox[0]
     sub_y = text_y + th + int(font_size * 0.25)
-    draw.text((center_x - stw // 2, sub_y), subtext, font=font_sub, fill=(255, 230, 210, 220))
+    # Subtitle in theme orange
+    draw.text((center_x - stw // 2, sub_y), subtext, font=font_sub, fill=(255, 72, 9, 230))
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     splash.save(output_path, "PNG", optimize=True)

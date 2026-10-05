@@ -106,10 +106,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <div className="space-y-2">
           {/* Logo Badge */}
           <div className="relative inline-flex items-center justify-center">
-            <div className="w-20 h-20 rounded-3xl shadow-xl shadow-orange-500/25 flex items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform overflow-hidden ring-4 ring-orange-500/15">
+            <div className="w-20 h-20 rounded-3xl shadow-xl shadow-orange-500/20 flex items-center justify-center overflow-hidden ring-4 ring-orange-500/15">
               <img src="/favicon.svg" alt="ZipZag App Icon" className="w-full h-full object-cover rounded-3xl" />
             </div>
-            <div className="absolute -bottom-1 -right-1 bg-slate-900 text-yellow-300 text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full border border-slate-700 shadow-xs">
+            <div className="absolute -bottom-2 bg-slate-900 text-yellow-300 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-slate-700 shadow-md">
               500 Levels
             </div>
           </div>
