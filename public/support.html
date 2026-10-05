@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support & FAQ - ZipZag Game</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff5a00;
+      --bg: #0b0f19;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 24px 16px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(255, 90, 0, 0.35);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #ff9838;
+      background: rgba(255, 90, 0, 0.1);
+      border: 1px solid rgba(255, 90, 0, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      background: rgba(255, 90, 0, 0.2);
+    }
+    .faq-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .faq-question {
+      font-size: 17px;
+      font-weight: 700;
+      color: #ff9838;
+      margin-bottom: 8px;
+    }
+    .faq-answer {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      margin: 0;
+    }
+    .contact-box {
+      background: linear-gradient(135deg, rgba(255, 90, 0, 0.15), rgba(241, 11, 33, 0.1));
+      border: 1px solid rgba(255, 90, 0, 0.3);
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .contact-btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: #ff5a00;
+      color: #ffffff;
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(255, 90, 0, 0.4);
+      transition: transform 0.2s;
+    }
+    .contact-btn:hover {
+      transform: translateY(-2px);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 36px;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="favicon.svg" alt="ZipZag Icon" class="logo-img" />
+      <div>
+        <h1>Help & Customer Support</h1>
+        <div class="subtitle">ZipZag: Logic Path Puzzle</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="data-deletion.html">Data Safety</a>
+    </div>
+
+    <h2 style="font-size: 20px; margin-bottom: 18px; color: #ffffff;">Frequently Asked Questions (FAQ)</h2>
+
+    <div class="faq-card">
+      <div class="faq-question">1. How do I play ZipZag?</div>
+      <p class="faq-answer">Start from dot #1. Drag your finger or mouse to connect the numbered checkpoints strictly in ascending order (1 &rarr; 2 &rarr; 3...). To complete the level, your continuous line must visit every single cell on the board without crossing over or leaving any blanks.</p>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">2. Can I play offline without an internet connection?</div>
+      <p class="faq-answer">Yes! ZipZag is 100% offline. Once installed on your Android device or PC via PWA, you can solve all 500 levels anytime, anywhere without mobile data or Wi-Fi.</p>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">3. How does the Hint system work?</div>
+      <p class="faq-answer">If you get stuck, tap the <strong>Hint</strong> button. It reveals the next logical move or rewinds you back if your path diverged. Higher levels grant more hints (e.g. 2 hints for levels 1-50, up to 5 hints for master levels).</p>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">4. Where is my level progress stored?</div>
+      <p class="faq-answer">Your progress, unlocked levels, stars, and high scores are saved locally on your device in secure sandbox storage.</p>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">5. Found a bug or have a suggestion?</div>
+      <p class="faq-answer">We love hearing from our players! Please send an email directly to developer Mohd Shahim with your device model and feedback.</p>
+    </div>
+
+    <div class="contact-box">
+      <h3 style="font-size: 18px; color: #ffffff;">Need direct assistance?</h3>
+      <p style="color: #cbd5e1; font-size: 14px; margin-top: 4px;">Our developer responds to all player inquiries within 24–48 hours.</p>
+      <a href="mailto:mohdshahim853313@gmail.com?subject=ZipZag%20Game%20Support" class="contact-btn">Email Developer Support</a>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 ZipZag Support &bull; Developed by Mohd Shahim.
+    </div>
+  </div>
+
+</body>
+</html>

@@ -10,6 +10,9 @@ import {
   Play,
   Wand2,
   HelpCircle,
+  FileText,
+  ExternalLink,
+  LifeBuoy,
 } from 'lucide-react';
 import { sound } from '../utils/sound';
 
@@ -227,6 +230,61 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
               <HelpCircle className="w-4 h-4 text-orange-500" />
               <span>Animated Rules Popup</span>
             </button>
+          </div>
+        </div>
+
+        {/* 5. Legal Policies & Developer Support */}
+        <div className="bg-white border border-slate-200/90 rounded-3xl p-5 shadow-2xs space-y-3">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-sm sm:text-base font-black text-slate-900">Legal & Support</h2>
+              <p className="text-xs text-slate-500">Official policies & developer contact</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 pt-1 text-xs">
+            <a
+              href="/privacy.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-2xl border border-slate-200/80 hover:border-orange-200 font-bold flex items-center justify-between transition-colors"
+            >
+              <span>Privacy Policy</span>
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+
+            <a
+              href="/terms.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-2xl border border-slate-200/80 hover:border-orange-200 font-bold flex items-center justify-between transition-colors"
+            >
+              <span>Terms of Use</span>
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+
+            <a
+              href="/support.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-2xl border border-slate-200/80 hover:border-orange-200 font-bold flex items-center justify-between transition-colors"
+            >
+              <span>Help & FAQ</span>
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+
+            <a
+              href="/data-deletion.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 rounded-2xl border border-slate-200/80 hover:border-orange-200 font-bold flex items-center justify-between transition-colors"
+            >
+              <span>Data Safety</span>
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+            </a>
           </div>
         </div>
 

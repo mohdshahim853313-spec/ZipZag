@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Deletion & Privacy - ZipZag Game</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff5a00;
+      --bg: #0b0f19;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 24px 16px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(255, 90, 0, 0.35);
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #ff9838;
+      background: rgba(255, 90, 0, 0.1);
+      border: 1px solid rgba(255, 90, 0, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      background: rgba(255, 90, 0, 0.2);
+    }
+    .info-box {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      padding: 16px 20px;
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ff9838;
+      margin: 24px 0 12px 0;
+    }
+    p, li {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      margin-bottom: 12px;
+    }
+    ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 36px;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="favicon.svg" alt="ZipZag Icon" class="logo-img" />
+      <div>
+        <h1>User Data Deletion Request</h1>
+        <div class="subtitle">Google Play Data Safety Compliance</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="support.html">Help & Support</a>
+    </div>
+
+    <div class="info-box">
+      &#10004; ZipZag does not collect or transmit any user accounts, personal identities, or cloud data.
+    </div>
+
+    <h2>How to Delete Your Local Game Data</h2>
+    <p>All saved puzzle progress, high scores, and statistics are stored solely on your device. You have 100% control over this data at all times and can wipe it instantly using either of the following steps:</p>
+
+    <h2>Option 1: Directly Inside the Game (Settings)</h2>
+    <ol>
+      <li>Open the <strong>ZipZag</strong> app.</li>
+      <li>Tap the <strong>Settings</strong> button (Gear icon in top navigation).</li>
+      <li>Click <strong>Reset Game Progress</strong>. All local levels, stars, and records will be instantly wiped clean.</li>
+    </ol>
+
+    <h2>Option 2: Android Device App Settings</h2>
+    <ol>
+      <li>Go to your phone's <strong>Settings &rarr; Apps &rarr; ZipZag</strong>.</li>
+      <li>Tap <strong>Storage & cache</strong>.</li>
+      <li>Tap <strong>Clear Storage / Clear Data</strong>.</li>
+    </ol>
+
+    <h2>Option 3: Uninstalling the App</h2>
+    <p>Uninstalling the application automatically deletes all locally cached data and save files from your device immediately with zero residue.</p>
+
+    <h2>Contact Developer for Data Inquiries</h2>
+    <p>If you have any questions regarding your data or privacy, contact developer <strong>Mohd Shahim</strong> at: <a href="mailto:mohdshahim853313@gmail.com" style="color: #ff9838;">mohdshahim853313@gmail.com</a>.</p>
+
+    <div class="footer">
+      &copy; 2026 ZipZag Game &bull; Mohd Shahim
+    </div>
+  </div>
+
+</body>
+</html>
