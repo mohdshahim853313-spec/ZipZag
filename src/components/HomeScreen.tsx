@@ -109,7 +109,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <div className="w-20 h-20 rounded-3xl shadow-xl shadow-orange-500/20 flex items-center justify-center overflow-hidden ring-4 ring-orange-500/15">
               <img src="/favicon.svg" alt="ZipZag App Icon" className="w-full h-full object-cover rounded-3xl" />
             </div>
-            <div className="absolute -bottom-2 bg-slate-900 text-yellow-300 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-slate-700 shadow-md">
+            <div className="absolute -bottom-2.5 whitespace-nowrap bg-slate-900 text-yellow-300 text-[10px] font-black uppercase tracking-wider px-3 py-0.5 rounded-full border border-slate-700 shadow-md pointer-events-none select-none">
               500 Levels
             </div>
           </div>

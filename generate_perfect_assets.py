@@ -99,31 +99,30 @@ def get_round_icon_svg():
 
 def get_splash_icon_svg():
     # Android 12+ SplashScreen Animated Icon
-    # Needs to fit inside a 160dp circle inside a 288dp viewport (i.e. ~55-60% of size)
-    # with transparent background
+    # In Android 12+, the icon is masked by a 160dp diameter circle in a 288dp viewport.
+    # To prevent Android from clipping the corners of the squircle, the squircle is sized
+    # to 660x660 with rx=180 inside the 1536x1536 canvas (diagonal fits comfortably inside 853px circle).
+    # NO shadow filter is used, ensuring 100% crisp rounded corners and zero dark corner smudges.
     artwork = get_artwork_svg_content()
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 1536 1536">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1536" y2="1536" gradientUnits="userSpaceOnUse">
+    <linearGradient id="splashBgGrad" x1="438" y1="438" x2="1098" y2="1098" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ff7600"/>
       <stop offset="45%" stop-color="#ff4809"/>
       <stop offset="100%" stop-color="#f10b21"/>
     </linearGradient>
-    <clipPath id="squircleClip">
-      <rect x="24" y="24" width="1488" height="1488" rx="340"/>
+    <clipPath id="splashSquircleClip">
+      <rect x="438" y="438" width="660" height="660" rx="180"/>
     </clipPath>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="30" flood-color="#000000" flood-opacity="0.45"/>
-    </filter>
   </defs>
 
-  <!-- Scaled squircle centered in canvas (scale 0.70) -->
-  <g transform="translate(768 768) scale(0.70) translate(-768 -768)" filter="url(#shadow)">
-    <rect x="24" y="24" width="1488" height="1488" rx="340" fill="url(#bgGrad)"/>
-    <g clip-path="url(#squircleClip)">
-      <g transform="translate(768 768) scale(0.70) translate(-768 -768)">
-        {artwork}
-      </g>
+  <!-- Clean rounded squircle with NO dark shadow -->
+  <rect x="438" y="438" width="660" height="660" rx="180" fill="url(#splashBgGrad)"/>
+
+  <g clip-path="url(#splashSquircleClip)">
+    <!-- Artwork centered at 768, 768 and scaled to 0.44 -->
+    <g transform="translate(768 768) scale(0.44) translate(-768 -768)">
+      {artwork}
     </g>
   </g>
 </svg>"""
@@ -164,25 +163,9 @@ def create_splash_screen(width, height, master_icon_img, output_path):
     # Resize master icon (user's rounded-corner squircle icon)
     icon_resized = master_icon_img.resize((icon_size, icon_size), Image.Resampling.LANCZOS)
     
-    # Create soft, elegant drop shadow behind the icon on white background
-    shadow_pad = int(icon_size * 0.25)
-    shadow_img = Image.new("RGBA", (icon_size + shadow_pad * 2, icon_size + shadow_pad * 2), (0, 0, 0, 0))
-    s_draw = ImageDraw.Draw(shadow_img)
-    corner_rad = int(icon_size * 0.22)
-    s_draw.rounded_rectangle(
-        [shadow_pad, shadow_pad + int(icon_size * 0.06), shadow_pad + icon_size, shadow_pad + icon_size + int(icon_size * 0.06)],
-        radius=corner_rad,
-        fill=(0, 0, 0, 45) # Soft shadow on white
-    )
-    shadow_blurred = shadow_img.filter(ImageFilter.GaussianBlur(radius=int(icon_size * 0.08)))
-    
-    # Paste shadow then icon
+    # Paste icon cleanly in center without dark corner shadows
     center_x = width // 2
     center_y = int(height * 0.44) if height > width else height // 2
-    
-    shadow_x = center_x - shadow_blurred.width // 2
-    shadow_y = center_y - shadow_blurred.height // 2
-    splash.paste(shadow_blurred, (shadow_x, shadow_y), shadow_blurred)
     
     icon_x = center_x - icon_size // 2
     icon_y = center_y - icon_size // 2
