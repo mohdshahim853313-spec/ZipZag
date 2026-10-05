@@ -69,8 +69,8 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={onGoHome}
           title="ZipZag Home Menu"
         >
-          <div className="w-6 h-6 sm:w-7 sm:h-7 bg-gradient-to-tr from-orange-600 via-amber-500 to-yellow-400 text-white rounded-xl flex items-center justify-center font-black shadow-sm ring-2 ring-orange-500/20 active:scale-95 transition-transform">
-            <Grid className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5]" />
+          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl flex items-center justify-center shadow-sm ring-2 ring-orange-500/20 active:scale-95 transition-transform overflow-hidden">
+            <img src="/favicon.svg" alt="ZipZag" className="w-full h-full object-cover rounded-lg sm:rounded-xl" />
           </div>
           <span className="font-black text-lg sm:text-xl tracking-tight bg-gradient-to-r from-orange-600 via-amber-600 to-slate-900 bg-clip-text text-transparent hidden min-[360px]:inline">
             ZipZag

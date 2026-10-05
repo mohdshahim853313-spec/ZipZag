@@ -72,8 +72,8 @@ export const LevelSelectModal: React.FC<LevelSelectModalProps> = ({
         {/* Header */}
         <div className="px-5 pt-4 pb-3 flex items-center justify-between border-b border-slate-100 bg-orange-50/50 shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-600 via-orange-500 to-amber-500 text-white flex items-center justify-center font-black shadow-sm">
-              <Grid className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center shadow-sm overflow-hidden ring-2 ring-orange-500/20">
+              <img src="/favicon.svg" alt="ZipZag" className="w-full h-full object-cover rounded-xl" />
             </div>
             <div>
               <h2 className="text-base font-black text-slate-900 flex items-center gap-1.5">

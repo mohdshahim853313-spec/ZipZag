@@ -66,8 +66,8 @@ export const LevelsScreen: React.FC<LevelsScreenProps> = ({
       <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-2xs safe-top-area">
         <div className="max-w-4xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3">
           <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-orange-600 via-orange-500 to-amber-500 text-white flex items-center justify-center font-black shadow-sm shrink-0">
-              <Grid className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-sm shrink-0 overflow-hidden ring-2 ring-orange-500/20">
+              <img src="/favicon.svg" alt="ZipZag" className="w-full h-full object-cover rounded-xl sm:rounded-2xl" />
             </div>
             <div className="min-w-0">
               <h1 className="text-sm sm:text-lg font-black text-slate-900 flex items-center gap-1.5 truncate">
